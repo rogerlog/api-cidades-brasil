@@ -15,13 +15,13 @@
 
 ## Images
 
+Postman, url heroku https://vast-depths-89933.herokuapp.com/cities
 
+![](/.img/dev1.png)
 
+Distance by two cities
 
-
-
-
-
+![](/.img/dev2.png)
 
 
 
@@ -99,6 +99,7 @@ psql -h localhost -U postgres_user_city cities -f /tmp/cidade.sql
 
 psql -h localhost -U postgres_user_city cities
 
+#heroku
 CREATE EXTENSION cube; 
 CREATE EXTENSION earthdistance;
 ```
