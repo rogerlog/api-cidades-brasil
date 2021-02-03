@@ -9,6 +9,42 @@
 * IntelliJ Community
 * Heroku CLI
 
+
+
+## Install Docker
+
+How to install Docker on Manjaro
+
+```shell
+sudo pacman -S docker
+```
+
+Start the Docker service
+
+```shell
+sudo systemctl start docker
+```
+
+Enable it to run whenever the system is rebooted
+
+```shell
+sudo systemctl enable docker.service
+```
+
+```shell
+sudo docker version
+sudo docker info
+```
+
+Run Docker without root
+
+```shell
+sudo usermod -aG docker $USER
+reboot
+```
+
+
+
 ## DataBase
 
 ### Postgres
@@ -37,6 +73,10 @@ psql -h localhost -U postgres_user_city cities
 CREATE EXTENSION cube; 
 CREATE EXTENSION earthdistance;
 ```
+
+Virtual docker used. Link https://labs.play-with-docker.com
+
+
 
 * [Postgres Earth distance](https://www.postgresql.org/docs/current/earthdistance.html)
 * [earthdistance--1.0--1.1.sql](https://github.com/postgres/postgres/blob/master/contrib/earthdistance/earthdistance--1.0--1.1.sql)
@@ -95,6 +135,16 @@ select earth_distance(
 ## Heroku
 
 * [DevCenter](https://devcenter.heroku.com/articles/getting-started-with-gradle-on-heroku)
+
+Create a DB
+
+```shell
+heroku addons:create heroku-postgresql
+```
+
+
+
+
 
 ## Code Quality
 
