@@ -1,4 +1,4 @@
-package com.github.rogerlog.staties.entities;
+package com.github.rogerlog.states.entities;
 
 import com.github.rogerlog.countries.entities.Country;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;

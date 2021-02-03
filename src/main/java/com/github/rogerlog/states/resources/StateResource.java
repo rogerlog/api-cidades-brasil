@@ -1,14 +1,15 @@
-package com.github.rogerlog.staties.resources;
+package com.github.rogerlog.states.resources;
 
-import com.github.rogerlog.staties.entities.State;
-import com.github.rogerlog.staties.repositories.StateRepository;
-import java.util.List;
+import com.github.rogerlog.states.entities.State;
+import com.github.rogerlog.states.repositories.StateRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/staties")
+@RequestMapping("/states")
 public class StateResource {
 
   private final StateRepository repository;
@@ -18,7 +19,7 @@ public class StateResource {
   }
 
   @GetMapping
-  public List<State> staties() {
+  public List<State> states() {
     return repository.findAll();
   }
 }

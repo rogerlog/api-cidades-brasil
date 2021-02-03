@@ -9,6 +9,20 @@
 * IntelliJ Community
 * Heroku CLI
 
+<br>
+
+<br>
+
+## Images
+
+
+
+
+
+
+
+
+
 
 
 ## Install Docker
@@ -59,11 +73,26 @@ docker run --name cities-db -d -p 5432:5432 -e POSTGRES_USER=postgres_user_city 
 
 * [data](https://github.com/chinnonsantos/sql-paises-estados-cidades/tree/master/PostgreSQL)
 
-```shell script
+```shell
 cd ~/workspace/sql-paises-estados-cidades/PostgreSQL
+```
 
-docker run -it --rm --net=host -v $PWD:/tmp postgres /bin/bash
+quotation marks in flag -v. Otherwise, the following error will be displayed...
 
+```shell
+docker: invalid reference format: repository name must be lowercase.
+See 'docker run --help'.
+```
+
+Therefore,
+
+```shell
+docker run -it --rm --net=host -v "$PWD:/tmp" postgres /bin/bash
+```
+
+Declare a list and populate with values. 
+
+```shell script
 psql -h localhost -U postgres_user_city cities -f /tmp/pais.sql
 psql -h localhost -U postgres_user_city cities -f /tmp/estado.sql
 psql -h localhost -U postgres_user_city cities -f /tmp/cidade.sql
